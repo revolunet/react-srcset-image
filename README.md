@@ -2,10 +2,10 @@
 
 [![npm package][npm-badge]][npm]
 
-React component to optimize your images based on `srcset` and an automatic medium-like blur animation using webpack [responsive-loader](http://github.com/revolunet/responsive-loader).
+React component to optimize your images based on `srcset` and add an automatic medium-like blur animation.
 
- - Creates srcset images with webpack
- - Embed base64 blurred placeholder
+ - Creates srcset images with webpack and [responsive-loader](http://github.com/revolunet/responsive-loader).
+ - Embed base64 blurred placeholder (default: 100x100)
  - Animate between placeholder and final image
 
 Demo : [http://revolunet.github.io/react-srcset-image](http://revolunet.github.io/react-srcset-image)
@@ -17,13 +17,10 @@ Demo : [http://revolunet.github.io/react-srcset-image](http://revolunet.github.i
 ```jsx
 import Image from 'react-srcset-image'
 
+// webpack responsive-loader config
 const imageSrc = require('responsive-loader?placeholder=true&sizes[]=100,sizes[]=200,sizes[]=300,sizes[]=500,sizes[]=800!./image.jpg');
 
-const Demo = () => (
-  <div>
-    <Image responsiveImage={image}/>
-  </div>
-)
+const Demo = () => <Image responsiveImage={imageSrc}/>
 ```
 
 

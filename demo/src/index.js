@@ -4,6 +4,7 @@ import GithubCorner from 'react-github-corner'
 
 import Image from '../../src'
 
+// responsive-loader config
 const image = require('responsive-loader?placeholder=true&sizes[]=400&sizes[]=600&sizes[]=1000&sizes[]=1400!./image.jpg');
 
 class Demo extends React.Component {
