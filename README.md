@@ -10,7 +10,8 @@ React component to optimize your images based on `srcset` and add an automatic m
 
 Demo : [http://revolunet.github.io/react-srcset-image](http://revolunet.github.io/react-srcset-image)
 
-:warning: this component needs webpack to produce multiple images sizes for you.
+:warning: This component needs webpack to produce multiple images sizes for you.
+:warning: The image needs to be statically defined
 
 # Usage
 
@@ -18,7 +19,7 @@ Demo : [http://revolunet.github.io/react-srcset-image](http://revolunet.github.i
 import Image from 'react-srcset-image'
 
 // webpack responsive-loader config
-const imageSrc = require('responsive-loader?placeholder=true&sizes[]=100,sizes[]=200,sizes[]=300,sizes[]=500,sizes[]=800!./image.jpg');
+const imageSrc = require('responsive-loader?placeholder=true&sizes[]=100,sizes[]=500,sizes[]=1000!./image.jpg');
 
 const Demo = () => <Image responsiveImage={imageSrc}/>
 ```
