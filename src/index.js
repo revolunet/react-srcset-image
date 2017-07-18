@@ -7,6 +7,17 @@ class Image extends React.Component {
       src: null
     };
   }
+  
+  componentDidMount() {
+    const el = this.img;
+    if (el.complete) {
+      const src = el.src;
+      this.setState(() => ({
+        src
+      }));
+    }
+  }
+  
   onImageLoaded = img => {
     const src = img.target.src;
     this.setState(() => ({
@@ -35,6 +46,9 @@ class Image extends React.Component {
         }}
       >
         <img
+          ref={img => {
+            this.img = img;
+          }}
           style={imgStyle}
           onLoad={this.onImageLoaded}
           src={responsiveImage.src}
